@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>GIT - gestionnaire de code source décentralisé</title>
+
+    <meta charset='utf-8'>
+    <script src='../slides.js'></script>
+    <link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+        
+      
+      <article>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/barcamp.png" alt="description" title="description" width="" height="" />
+      </article>
+        
+      <article>
+        <h1>
+          GIT
+          <br>
+          gestionnaire de code source décentralisé
+        </h1>
+        <p>
+          Papa Pathé SENE
+          <br>
+          Décembre 2011
+        </p>
+      </article>
+
+      <article>
+        <h1>
+          MOI
+          <br />
+          Chief Technology Officer
+          <br />
+          à Xarala
+        </h1>
+        <p>
+          Une startup basée sur l'open source
+          <br />
+          Ruby, Rails, Php, Mysql, PostgreSQL, Linux etc....
+        </p>
+      </article>
+
+      <article>
+        <q>
+          SW PO 1 HACKER GIT!
+          <br />
+          <span class='green'>je n'en connais qu'un tt pti p rek!</span>
+        </q>
+      </article>
+
+      
+      <article>
+        <h3>GESTIONNAIRE DE VERSION DE CODE SOURCE?</h3>
+        
+        <p>Un gestionnaire de version de code source est un système qui enregistre l’évolution d’un fichier ou d’un ensemble de fichiers au cours du temps.</p>
+        <br />
+        <h3>POURQUOI?</h3>
+        <ul>
+          <li>partager du code source entre développeurs.</li>
+          <li>historique et versions du code source.</li>
+          <li>revenir à une version antérieure en cas de bogue, erreur de commit.</li>
+          <li>facilite la maintenance curative et évolutive des projets de développement.</li>
+        </ul>
+      </article>
+      
+      <article>
+      <h3>A propos de GIT</h3>
+
+      <p>Crée en 2005 par Linus Torvalds pour le développement du noyau Linux.</p>
+      <br />
+      <h3>Objectifs</h3>
+      <ul>
+      <li>Vitesse</li>
+      <li>Support pour les développements non linéaires (milliers de branches parallèles)</li>
+      <li>Complètement distribué</li>
+      <li>Capacité à gérer efficacement des projets d’envergure tels que le noyau Linux</li>
+      </ul>
+
+      </article>
+      
+      <article>
+      <h3>Alternatives à GIT</h3>
+      <ul>
+      <li>subversion</li>
+      <li>mercurial</li>
+      <li>bazaar</li>
+      <li>perforce</li>
+      <li>Microsoft Team Foundation Server</li>
+      </ul>
+
+      </article>
+            
+      <article>
+      
+        <h3>Projets utilisant GIT</h3>
+        <table>
+          <tbody>
+            <tr>
+              <td>Git</td>
+              <td>Noyau Linux</td>
+            </tr>
+            <tr>
+              <td>Perl</td>
+              <td>Eclipse</td>
+            </tr>
+            <tr>
+              <td>Gnome</td>
+              <td>KDE</td>
+            </tr>
+            <tr>
+              <td>Qt</td>
+              <td>Ruby on Rails</td>
+            </tr>
+            <tr>
+              <td>Android</td>
+              <td>PostgreSQL</td>
+            </tr>
+            <tr>
+              <td>Debian</td>
+              <td>X.org</td>
+            </tr>
+            <tr>
+              <td>jQuery</td>
+              <td>Heroku</td>
+            </tr>
+            <tr>
+              <td>Facebook</td>
+              <td>Yahoo</td>
+            </tr>
+            <tr>
+              <td>Microsoft</td>
+              <td>GitHub</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </article>
+      
+      
+      <article>
+        <h2>Installer GIT</h2>
+      </article>
+      
+      <article>
+        <h3>Installation de GIT sous linux</h3>
+        <h4>Dépendences</h4>
+        <pre class='preettyprint'>
+$ yum install curl-devel expat-devel gettext-devel  \ 
+openssl-devel zlib-devel
+
+$ apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \
+ libz-dev libssl-dev
+        </pre>
+        <h4>Installation du paquet GIT-CORE</h4>
+        <pre class='preettyprint'>
+$ yum install git-core
+
+$ apt-get install git-core
+        </pre>
+        
+      </article>
+      
+      <article>
+        <h3>Installation de GIT sous windows</h3>
+        <p>
+        Installer Git sur Windows est très facile. Le projet <a href='http://code.google.com/p/msysgit/' target='_blank'>msysGit</a> fournit une des procédures d’installation les plus simples. </p>
+        
+        <p>Téléchargez simplement l’éxecutable msysGit depuis la page Google Code, et lancez-le :
+        </p>
+        <pre class='preettyprint'>
+http://code.google.com/p/msysgit
+        </pre>
+        
+      </article>
+      
+      
+      <article>
+        <h2>Personnalisez votre environnement GIT</h2>
+      </article>
+ 
+      <article>
+        <h3>Paramétrage à la première utilisation de GIT</h3>
+        
+        <h4>Votre identité</h4>
+        <pre class='preettyprint'>
+$ git config --global user.name  pathe.xarala
+$ git config --global user.email pathe.sene@xarala.sn
+        </pre> 
+        
+        <h4>Votre éditeur préféré</h4>
+        <pre class='preettyprint'>
+$ git config --global core.editor nano
+$ git config --global core.editor vi
+        </pre>
+        
+        
+      </article>      
+      
+ 
+      <article>
+        <h3>Paramétrage à la première utilisation de GIT</h3>
+        
+        <h4>Vérifiez vos paramètres</h4>
+        <pre class='preettyprint'>
+$ git config --list
+$ git config user.name
+$ git config user.email
+        </pre>
+        
+        <h4>Obtenir de l’aide</h4>
+        <pre class='preettyprint'>
+$ git help "verbe"
+$ man git-"verbe"
+        </pre>
+        
+        
+      </article>    
+      
+      
+ 
+      <article>
+        <h3>Commandes de base</h3>
+        
+        <h4>initialiser un dépôt</h4>
+        <pre class='preettyprint'>
+//naviguer jusqu'à la racine du projet
+$ cd projects/barcamp
+$ git init
+$ initialized Git repository in /home/pathe/projects/barcamp/.git/
+$ git status
+$ On branch master
+$
+$ Initial commit
+$
+$ nothing to commit (create/copy files and use "git add" to track)
+
+        </pre>
+       La commande <b>git init</b> crée un répertoire caché <b>.git</b> qui stocke les objets de GIT.
+        
+      </article>      
+      
+      <article>
+        
+        <pre class='preettyprint'>
+$ ls -al .git
+total 56
+drwxrwxr-x  8 pathe pathe 4096 Dec 17 17:26 .
+drwxrwxr-x  3 pathe pathe 4096 Dec 17 17:25 ..
+drwxrwxr-x  2 pathe pathe 4096 Dec 17 00:50 branches
+-rw-rw-r--  1 pathe pathe   16 Dec 17 17:26 COMMIT_EDITMSG
+-rw-rw-r--  1 pathe pathe  185 Dec 17 16:41 config
+-rw-rw-r--  1 pathe pathe   73 Dec 17 00:50 description
+-rw-rw-r--  1 pathe pathe   23 Dec 17 04:03 HEAD
+drwxrwxr-x  2 pathe pathe 4096 Dec 17 00:50 hooks
+-rw-rw-r--  1 pathe pathe  336 Dec 17 17:26 index
+drwxrwxr-x  2 pathe pathe 4096 Dec 17 00:50 info
+drwxrwxr-x  3 pathe pathe 4096 Dec 17 01:41 logs
+drwxrwxr-x 13 pathe pathe 4096 Dec 17 17:26 objects
+-rw-rw-r--  1 pathe pathe   41 Dec 17 04:03 ORIG_HEAD
+drwxrwxr-x  5 pathe pathe 4096 Dec 17 17:39 refs
+        
+        </pre>
+        
+      </article>
+      
+      <article>
+        <h3>Commandes de base</h3>
+        
+        <h4>initialiser un dépôt</h4>
+        <pre class='preettyprint'>
+// créer un fichier barcamp.md
+$ touch barcamp.md
+$ git status 
+$ On branch master
+$
+$ Initial commit
+$
+$ Untracked files:
+$   (use "git add <file>..." to include in what will be committed)
+$
+$	barcamp.md
+$ nothing added to commit but untracked files present 
+$ (use "git add" to track)
+        </pre>       
+        
+      </article>   
+      <article>
+        <h3>Commandes de base</h3>
+        
+        <h4>premier commit</h4>
+        <pre class='preettyprint'>
+$ git add barcamp.md 
+$ git status 
+$  On branch master
+$ 
+$  Initial commit
+$ 
+$  Changes to be committed:
+$    (use "git rm --cached <file>..." to unstage)
+$ 
+$ 	new file:   barcamp.md
+$ 
+        </pre>             
+      </article>    
+      <article>
+        <h3>Commandes de base</h3>
+        
+        <h4>premier commit</h4>
+        <pre class='preettyprint'>
+$ git commit -m 'premier commit'
+$ [master (root-commit) 54b2cf2] premier commit
+$ 0 files changed, 0 insertions(+), 0 deletions(-)
+$ create mode 100644 barcamp.md
+
+
+$ git log 
+$ commit 54b2cf22afb53b03b00c0889114047cc58ce9cc6
+$ Author: pathe.sene "pathe.sene@xarala.sn"
+$ Date:   Sat Dec 17 01:41:07 2011 +0000
+$ premier commit
+
+
+        </pre>             
+      </article>    
+      
+      <article>
+        <h2>Créez une branche pour ajouter une fonctionnalité à votre projet</h2>
+      </article>
+      <article>
+        <h3>Créez une branche pour ajouter une fonctionnalité</h3>
+        
+        <pre class='preettyprint'>
+$ git branch logo
+$ git checkout logo 
+$ Switched to branch 'logo'
+        </pre>      
+      
+      <h4>TIP</h4>
+      <p>
+      Utiliser la commande <b>git checkout -b "branche"</b> pour créer une branche et se positionner sur cette branche en même temps.
+      </p>       
+      </article>      
+      
+      
+      <article>
+        <h3>Créez une branche pour ajouter une fonctionnalité</h3>
+        <pre class='preettyprint'>
+        
+$ // modifier le fichier barcamp.md et créer un fichier logo.png
+$ git status 
+$  On branch logo
+$  Changes not staged for commit:
+$    (use "git add <file>..." to update what will be committed)
+$    (use "git checkout -- <file>..." to discard changes in working directory)
+$ 	modified:   barcamp.md
+$ 
+$  Untracked files:
+$    (use "git add ''file'..." to include in what will be committed)
+$ 
+$ 	barcamp.md~
+$ 	logo.png
+$ no changes added to commit (use "git add" and/or "git commit -a")
+        
+        </pre>
+        
+      </article>      
+      
+      <article>
+        <h3>Créez une branche pour ajouter une fonctionnalité</h3>
+        <h4>TIP</h4>
+        <p>
+          créer un fichier <b>.gitignore</b> pour ignorer certains fichiers du répertoire de travail dans le dépôt GIT. 
+          <br /> 
+          <br />
+          <span class='red'><em>ignorez vos fichiers contenant des mots de passes</em></span>
+        </p>        
+        <pre class='preettyprint'>
+// contenu du fichier .gitignore
+barcamp.md~
+*~
+// *.extension
+// repertoire/*
+        </pre>        
+      </article>       
+      
+      <article>
+        <h3>Créez une branche pour ajouter une fonctionnalité</h3>
+        <pre class='preettyprint'>
+$ git status 
+$  On branch logo
+$  Changes not staged for commit:
+$    (use "git add <file>..." to update what will be committed)
+$    (use "git checkout -- <file>..." to discard changes in working directory)
+$ 
+$ 	modified:   barcamp.md
+$ 
+$  Untracked files:
+$    (use "git add <file>..." to include in what will be committed)
+$ 
+$ 	.gitignore
+$ 	logo.png
+$  no changes added to commit (use "git add" and/or "git commit -a")
+
+        </pre>        
+      </article>      
+      <article>
+        <h3>Créez une branche pour ajouter une fonctionnalité</h3>
+        <pre class='preettyprint'>
+$ git add .
+
+$ git status 
+$  On branch logo
+$  Changes to be committed:
+$    (use "git reset HEAD <file>..." to unstage)$ 
+$ 	new file:   .gitignore
+$ 	modified:   barcamp.md
+$ 	new file:   logo.png
+
+$ git commit -m 'ajout logo barcamp'
+$ [logo 7e680bf] ajout logo barcamp
+$ 2 files changed, 10 insertions(+), 0 deletions(-)
+$ create mode 100644 .gitignore
+$ create mode 100644 logo.png
+
+        </pre> 
+      </article>          
+      <article>
+        <h3>Ajouter les modifs dans la branche <b>*master</b></h3>
+        <pre class='preettyprint'>
+$ git checkout master
+$ 
+$ git merge logo 
+$ Updating 54b2cf2..7e680bf
+$ Fast-forward
+$  .gitignore |    1 +
+$  barcamp.md |    9 +++++++++
+$  2 files changed, 10 insertions(+), 0 deletions(-)
+$  create mode 100644 .gitignore
+$  create mode 100644 logo.png
+
+        </pre>        
+      </article>           
+      <article>
+        <h3>Ajouter les modifs dans la branche <b>*master</b></h3>
+        <pre class='preettyprint'>
+$ git log 
+commit 7e680bf5281fc83dbec3118a581c50162e573de2
+Author: pathe.sene <pathe.sene@xarala.sn>
+Date:   Sat Dec 17 03:52:16 2011 +0000
+
+    ajout logo barcamp
+
+commit 54b2cf22afb53b03b00c0889114047cc58ce9cc6
+Author: pathe.sene <pathe.sene@xarala.sn>
+Date:   Sat Dec 17 01:41:07 2011 +0000
+
+    premier commit
+
+        </pre>        
+      </article>       
+      <article>
+        <h3>Supprimer la branche logo</h3>
+        <pre class='preettyprint'>$ git branch -d logo 
+Deleted branch logo (was 7e680bf).
+        </pre>          
+      <h4>TIP</h4>
+      <em>
+      identifier la branche courante (précédée par * dans la liste)
+      </em>
+        <pre class='preettyprint'>
+$ git branch 
+* master
+        </pre>       
+      </article>        
+      
+      <article>
+        <h2>Travailler avec des dépôts distants</h2>
+      </article>    
+        
+      <article>
+        <h3>Travailler avec des dépôts distants</h3>
+        <p>
+        Pour pouvoir collaborer sur un projet Git, il est nécessaire de connaître comment gérer les dépôts distants. Les dépôts distants sont des versions de votre projet qui sont hébergées sur Internet ou le réseau. <br /><br />
+        
+        Vous pouvez en avoir plusieurs, pour lesquels vous pouvez avoir des droits soit en lecture seule, soit en lecture/écriture. Collaborer avec d’autres personnes consiste à gérer ces dépôts distants, en poussant ou tirant des données depuis et vers ces dépôts quand vous souhaitez partager votre travail.
+        </p>
+      </article>    
+        
+      <article>
+        <h3>Simuler un dépôt distant</h3>
+        <br />
+        Cloner le dépot  dans un répertoire du système de fichier
+        <pre>
+// nous sommes à la racine du projet
+$ git clone --bare . /home/pathe/barcamp.git        
+        </pre>
+        Ajouter un dépôt remote dans le projet
+        <pre>
+// nous sommes à la racine du projet
+$ git remote add local /home/pathe/barcamp.git/    
+$ git remote 
+local
+
+        </pre>
+      </article>       
+        
+      <article>
+        <h3>Simuler un dépôt distant</h3>
+        <pre>
+
+$ git remote show local 
+* remote local
+  Fetch URL: /home/pathe/barcamp.git/
+  Push  URL: /home/pathe/barcamp.git/
+  HEAD branch: master
+  Remote branch:
+    master new (next fetch will store in remotes/local)
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+
+        </pre>
+      </article>  
+      
+      <article>
+        <h3>Simuler un dépôt distant</h3>
+        <br />
+        créez un fichier et commitez le! pour voir les différences avec le dépôt remote.
+
+        <pre>
+$ touch pathe.cnf
+$ git add pathe.cnf
+$ git commit -m 'added my config'
+[master 12871be] added my config
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 pathe.cnf
+
+        </pre>
+      </article>    
+      
+      <article>
+        <h3>Simuler un dépôt distant</h3>
+
+        <pre>
+$ git remote show local
+* remote local
+  Fetch URL: /home/pathe/barcamp.git/
+  Push  URL: /home/pathe/barcamp.git/
+  HEAD branch: master
+  Remote branch:
+    master new (next fetch will store in remotes/local)
+  Local ref configured for 'git push':
+    master pushes to master (fast-forwardable)
+
+        </pre>
+      </article>    
+      <article>
+        <h3>Faire un push sur le <b>remote</b> local</h3>
+
+        <pre>
+$ git push local master 
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 257 bytes, done.
+Total 2 (delta 1), reused 0 (delta 0)
+Unpacking objects: 100% (2/2), done.
+To /home/pathe/barcamp.git/
+   7e680bf..12871be  master -> master
+        </pre>
+      </article>
+          
+      <article>
+        <h2>Devenez un GitHubber</h2>
+      </article>   
+      
+      
+      <article>
+       <ul> 
+       <li>Github est une société spécialisée dans l'hébergement de dépôts GIT.</li>
+        <li>Github fournit un hébergement gratuit pour les projets open source. </li>
+        <li>Si vous voulez un projet privé, il faut payer. </li>
+        </ul>
+      </article>   
+      
+      
+      
+
+
+      
+  </body>
+</html>
